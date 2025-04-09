@@ -16,16 +16,14 @@ app.use("", indexRouter);
 // mongoose connect
 const mongoURI = MONGODB_URI_PROD;
 mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(mongoURI, { useNewUrlParser: true })
   .then(() => {
     console.log("connected");
   })
   .catch(err => {
-    console.log("connection fail", err.message);
+    console.log("connection fail", err);
   });
 
-// Use Heroku's provided port, or fallback to 5000 for local development
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`server on ${PORT}`);
+app.listen(5000, () => {
+  console.log("server on 5000");
 });
