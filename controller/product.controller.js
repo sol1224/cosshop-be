@@ -1,5 +1,5 @@
 const Product = require("../model/Product");
-const { param } = require("../routes");
+const { params } = require("../routes");
 
 const productController = {};
 
