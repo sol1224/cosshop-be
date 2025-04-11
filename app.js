@@ -17,14 +17,15 @@ app.use("", indexRouter);
 const mongoURI = MONGODB_URI_PROD;
 
 mongoose
-  .connect(mongoURI, { useNewUrlParser: true })
+  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log("connected");
+    console.log("MongoDB connected");
+
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
   })
   .catch(err => {
-    console.log("connection fail", err);
+    console.error("MongoDB connection failed:", err);
+    process.exit(1); // 연결 실패 시 앱 종료
   });
-
-app.listen(port, () => {
-  console.log("sucess! port");
-});
