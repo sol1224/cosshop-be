@@ -1,9 +1,9 @@
+require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const indexRouter = require("./routes/index");
-const cors = require("cors");
-require("dotenv").config();
 
 const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD;
 const port = process.env.PORT || 5000;
