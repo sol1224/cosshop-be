@@ -26,5 +26,5 @@ mongoose
   });
 
 app.listen(port, () => {
-  console.log("sucess! port");
+  console.log("success! port");
 });
